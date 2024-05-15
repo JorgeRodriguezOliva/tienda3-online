@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <title>Tienda OnLine</title>
+  <style>
+    /* Estilos para el nav */
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
+    }
+
+    nav {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline;
+      margin-right: 40px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* Estilos para el header */
+    header {
+      background-color: #f2f2f2;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* Estilos para las cards */
+    .cards {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .card {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 20px;
+      width: 300px;
+      margin-bottom: 20px;
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    .card h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      margin-bottom: 10px;
+    }
+
+    .card button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .card button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Estilos para el formulario de contacto */
+    .contact {
+      background-color: #f9f9f9;
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    .contact form label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .contact form input,
+    .contact form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .contact form button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .contact form button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Estilos para el footer */
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    #mainContainer img {
+      width: 160px;
+      height: 120px;
+    }
+
+    #mainContainer {
+      margin-bottom: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <header id="headerContainer">
+    <!-- El header será cargado aquí -->
+  </header>
+  <nav id="navContainer">
+    <!-- El nav será cargado aquí -->
+  </nav>
+  <main id="mainContainer">
+    <!-- Las cards serán cargadas aquí -->
+  </main>
+  <footer id="footerContainer">
+    <!-- El footer será cargado aquí -->
+  </footer>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+    crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="assets/js/index.js"></script>
+
+  <script>
+    // Función para cargar el contenido de un archivo HTML en un contenedor específico
+    function includeHTML(filePath, containerId) {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById(containerId).innerHTML = this.responseText;
+        }
+      };
+      xhttp.open("GET", filePath, true);
+      xhttp.send();
+    }
+
+    // Cargar los archivos HTML en los contenedores respectivos
+    includeHTML("header.html", "headerContainer");
+    includeHTML("nav.html", "navContainer");
+    includeHTML("cards.html", "mainContainer");
+    includeHTML("footer.html", "footerContainer");
+  </script>
+</body>
+
+</html>
